@@ -11,7 +11,7 @@ module.exports.protect = async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
       //decodes token id
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, "MY@MAN123");
       const user = await User.findById(decoded._id).select("-password");
       req.user = user
       
