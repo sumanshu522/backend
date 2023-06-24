@@ -8,7 +8,7 @@ const router = express.Router()
 // Save a Post
 router.post('/', protect, createPost)
 // router.get('/',protect,getPost)
-router.get('/', getAll)
+router.get('/',protect, getAll)
 // Search for a user
 router.get('/id/:postId',protect,getPostById)
 router.post('/user', protect, getPostByUser)
